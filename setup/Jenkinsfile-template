@@ -4,30 +4,32 @@ pipeline{
 
 // uncomment the following lines by removing /* and */ to enable
 /*    tools{
-       nodejs 'nodejs' 
+       maven 'Maven 3.6.3' 
     }
 */    
 
     stages{
-        stage('compile'){
+        stage('one'){
             steps{
-                echo 'this is the compile first job'
-                sh 'npm install'
+                echo 'this is the first job'
+                sh 'uptime'
+                sleep 4
                
             }
         }
-        stage('test'){
+        stage('two'){
             steps{
-                echo 'this is the test second job'
-                sh 'npm test'
+                echo 'this is the second job'
+                sh 'uptime'
+                sleep 9
               
             }
         }
-        stage('package'){
+        stage('three'){
             steps{
                 echo 'this is the test third job'
-                sh 'npm run package'
-               
+                sh 'uptime'
+               sleep 7
             }
         }
     }
